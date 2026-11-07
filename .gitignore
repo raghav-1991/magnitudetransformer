@@ -1,2 +1,14 @@
 node_modules
-node_modules
+
+# Next.js build output (generated, never commit)
+.next
+.next-check
+out
+
+# Vercel / env
+.vercel
+.env*.local
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,15 +1,15 @@
 import Link from "next/link"
 import SiteShell from "@/components/mt/SiteShell"
-import { PageHero, Industries, Stats, WhyChoose, CtaBlock, StandardsStrip } from "@/components/mt/sections"
+import { PageHero, Industries, Stats, WhyChoose, CtaBlock, StandardsStrip, ClientLogos } from "@/components/mt/sections"
 import { Reveal, OrbitBadge } from "@/components/mt/effects"
-import { IMG } from "@/lib/site"
+import { PIC } from "@/lib/site"
 
 export const metadata = { title: "Clientele" }
 
 export default function ClientelePage() {
     return (
         <SiteShell>
-            <PageHero title="Clientele" image={IMG("mt-substation.jpg")} text="Trusted by 1,250+ clients across India." />
+            <PageHero title="Clientele" image={PIC("trtyrt.jpg")} text="Trusted by 1,250+ clients across India." />
             <section className="mt-section">
                 <div className="mt-container">
                     <div className="mt-split">
@@ -27,12 +27,13 @@ export default function ClientelePage() {
                             <Link href="/get-a-quote" className="mt-btn mt-btn--primary">Become a Client <i className="fas fa-arrow-right" /></Link>
                         </Reveal>
                         <Reveal variant="right" className="mt-about__media">
-                            <div className="mt-about__img mt-beam" style={{ borderRadius: 30 }}><img src={IMG("mt-substation.jpg")} alt="Substation powered by Magnitude transformers" style={{ aspectRatio: "4/4.4" }} /></div>
+                            <div className="mt-about__img mt-beam" style={{ borderRadius: 30 }}><img src={PIC("rwerwer-1-scaled.jpg")} alt="Magnitude transformer installed on site" style={{ aspectRatio: "4/4.4", objectPosition: "62% center" }} /></div>
                             <div className="mt-about__since"><OrbitBadge text="1585+ PROJECTS • 100% SATISFACTION • " top="1250+" bottom="Clients" /></div>
                         </Reveal>
                     </div>
                 </div>
             </section>
+            <ClientLogos grid title={<>Some of the names <span className="mt-grad-text">we power.</span></>} />
             <StandardsStrip />
             <Industries />
             <Stats />

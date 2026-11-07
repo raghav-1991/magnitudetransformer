@@ -1,7 +1,7 @@
 import SiteShell from "@/components/mt/SiteShell"
 import { PageHero, AboutBlock, SectionHead, ProductRange, CtaBlock, Team, Stats, StandardsStrip } from "@/components/mt/sections"
 import { Reveal, SpotlightCard, Backdrop } from "@/components/mt/effects"
-import { IMG } from "@/lib/site"
+import { PIC } from "@/lib/site"
 
 export const metadata = { title: "About Us" }
 
@@ -17,7 +17,7 @@ const foundation = [
 export default function AboutPage() {
     return (
         <SiteShell>
-            <PageHero title="About Us" image={IMG("mt-factory-hall.jpg")} text="Designing and manufacturing reliable distribution and power transformers since 2007." />
+            <PageHero title="About Us" image={PIC("DJI_0892-1-scaled.jpg")} text="Designing and manufacturing reliable distribution and power transformers since 2007." />
             <AboutBlock full />
             <StandardsStrip />
 

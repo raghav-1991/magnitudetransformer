@@ -13,7 +13,7 @@ export const metadata = {
         template: "%s | Magnitude Transformers",
     },
     description: "ISO certified manufacturer of ISI-licensed, BEE star-rated power and distribution transformers, approved under BIS standards for utilities, industries and multi-storey buildings. Peenya Industrial Area, Bangalore.",
-    icons: { icon: "/assets/img/mt/magnitude-official-logo.png" },
+    icons: { icon: "/assets/images/cropped-op1-1.png", apple: "/assets/images/cropped-op1-1.png" },
 }
 
 export const viewport = { themeColor: "#ffffff" }

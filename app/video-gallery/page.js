@@ -1,14 +1,14 @@
 import SiteShell from "@/components/mt/SiteShell"
 import { PageHero, SectionHead, CtaBlock } from "@/components/mt/sections"
 import VideoGrid from "@/components/mt/VideoGrid"
-import { IMG } from "@/lib/site"
+import { PIC } from "@/lib/site"
 
 export const metadata = { title: "Video Gallery" }
 
 export default function VideoGalleryPage() {
     return (
         <SiteShell>
-            <PageHero title="Video Gallery" crumbs={[["Gallery", "/gallery"]]} image={IMG("mt-factory-machines.jpg")} text="A closer look at Magnitude." />
+            <PageHero title="Video Gallery" crumbs={[["Gallery", "/gallery"]]} image={PIC("DJI_0901-scaled.jpg")} text="A closer look at Magnitude." />
             <section className="mt-section">
                 <div className="mt-container">
                     <SectionHead center eyebrow="Video Gallery" icon="fa-circle-play" title={<>A closer look at <span className="mt-grad-text">Magnitude.</span></>} />

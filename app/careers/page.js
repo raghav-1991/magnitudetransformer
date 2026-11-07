@@ -1,7 +1,7 @@
 import SiteShell from "@/components/mt/SiteShell"
 import { PageHero, SectionHead, CtaBlock } from "@/components/mt/sections"
 import { Reveal, SpotlightCard, OrbitBadge } from "@/components/mt/effects"
-import { IMG, jobs, company } from "@/lib/site"
+import { PIC, jobs, company } from "@/lib/site"
 
 export const metadata = { title: "Careers" }
 
@@ -10,7 +10,7 @@ const mail = (subject) => `${company.emailHref}?subject=${encodeURIComponent(sub
 export default function CareersPage() {
     return (
         <SiteShell>
-            <PageHero title="Careers" image={IMG("mt-welding.jpg")} text="Grow your career with Magnitude." />
+            <PageHero title="Careers" image={PIC("dsfsdfsdf.jpg")} text="Grow your career with Magnitude." />
             <section className="mt-section">
                 <div className="mt-container">
                     <div className="mt-split">
@@ -29,7 +29,7 @@ export default function CareersPage() {
                             <a href={mail("Job Application")} className="mt-btn mt-btn--primary">Email Your Resume <i className="fas fa-paper-plane" /></a>
                         </Reveal>
                         <Reveal variant="right" className="mt-about__media">
-                            <div className="mt-about__img mt-beam" style={{ borderRadius: 30 }}><img src={IMG("mt-welding.jpg")} alt="Welder at Magnitude factory" style={{ aspectRatio: "4/4.4" }} /></div>
+                            <div className="mt-about__img mt-beam" style={{ borderRadius: 30 }}><img src={PIC("gdfgdfgdfg.jpg")} alt="Technician at work" style={{ aspectRatio: "4/4.4" }} /></div>
                             <div className="mt-about__since"><OrbitBadge text="WE ARE HIRING • JOIN MAGNITUDE • " top="Join" bottom="Our Team" /></div>
                         </Reveal>
                     </div>

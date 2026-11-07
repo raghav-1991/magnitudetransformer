@@ -2,14 +2,14 @@ import SiteShell from "@/components/mt/SiteShell"
 import { PageHero, StandardsStrip } from "@/components/mt/sections"
 import { Reveal, SpotlightCard, Backdrop } from "@/components/mt/effects"
 import { QuoteForm } from "@/components/mt/forms"
-import { IMG, company } from "@/lib/site"
+import { PIC, company } from "@/lib/site"
 
 export const metadata = { title: "Get a Quote" }
 
 export default function QuotePage() {
     return (
         <SiteShell>
-            <PageHero title="Get a Quote" image={IMG("mt-precision-measure.jpg")} text="Get an instant price for your transformer." />
+            <PageHero title="Get a Quote" image={PIC("SLV_4864-scaled.jpg")} text="Get an instant price for your transformer." />
             <section className="mt-section">
                 <Backdrop aurora={false} />
                 <div className="mt-container">

@@ -1,7 +1,8 @@
 'use client'
 import Link from "next/link"
-import { IMG, company, faqs, heroFeatures, productRange, products, standards, stats, team, galleryHome, industries } from "@/lib/site"
+import { IMG, PIC, company, faqs, heroFeatures, productRange, products, standards, stats, team, galleryHome, industries, clients, videos } from "@/lib/site"
 import { Reveal, NumberTicker, SpotlightCard, Tilt, Marquee, Meteors, Backdrop, OrbitBadge, Accordion, Gallery } from "./effects"
+import { VideoPlayer } from "./VideoGrid"
 
 export function SectionHead({ eyebrow, icon = "fa-bolt", title, text, center = false, children }) {
     return (
@@ -14,7 +15,7 @@ export function SectionHead({ eyebrow, icon = "fa-bolt", title, text, center = f
     )
 }
 
-export function PageHero({ title, crumbs = [], text, image = IMG("mt-factory-hall.jpg") }) {
+export function PageHero({ title, crumbs = [], text, image = PIC("DJI_0901-scaled.jpg") }) {
     return (
         <section className="mt-pagehero">
             <div className="mt-pagehero__bg"><img src={image} alt="" /></div>
@@ -90,9 +91,9 @@ export function AboutBlock({ full = false }) {
                 <div className="mt-split">
                     <Reveal variant="left" className="mt-about__media">
                         <div className="mt-about__img mt-beam" style={{ borderRadius: 30 }}>
-                            <img src={IMG(full ? "mt-precision-measure.jpg" : "mt-engineer-hardhat.jpg")} alt="Magnitude engineer" />
+                            <img src={full ? PIC("SLV_4836-scaled.jpg") : PIC("rwerwer-1-scaled.jpg")} alt="Magnitude transformer" style={{ objectPosition: full ? "center" : "62% center" }} />
                         </div>
-                        <div className="mt-about__img2"><img src={IMG(full ? "mt-welding.jpg" : "mt-factory-hall.jpg")} alt="Magnitude factory" /></div>
+                        <div className="mt-about__img2"><img src={full ? PIC("DJI_0911-scaled.jpg") : PIC("DJI_0892-1-scaled.jpg")} alt="Magnitude factory floor" /></div>
                         <div className="mt-about__since"><OrbitBadge top="2007" bottom="Established" /></div>
                     </Reveal>
                     <Reveal variant="right">
@@ -137,17 +138,17 @@ export function AboutBlock({ full = false }) {
 }
 
 const productImages = {
-    "oil-filled-distribution-transformer": "mt-twin-transformers.jpg",
-    "dry-type-transformers": "mt-industrial-machine.jpg",
-    "solar-duty-transformers": "mt-solar-farm.jpg",
-    "custom-designed-transformer": "mt-electrical-equipment.jpg",
+    "oil-filled-distribution-transformer": PIC("SLV_4770-scaled.jpg"),
+    "dry-type-transformers": PIC("SLV_4915-scaled.jpg"),
+    "solar-duty-transformers": PIC("ddasda.jpg"),
+    "custom-designed-transformer": PIC("Special-Purpose-Tr-1-2-1.jpg"),
 }
 
 export function ProductsBento() {
     const cards = [
         ...products.map(p => ({ href: `/${p.slug}`, icon: p.icon, title: p.short, text: p.cardText, img: productImages[p.slug], chips: p.quick.slice(0, 2).map(q => q[1]) })),
-        { href: "/services", icon: "fa-paint-roller", title: "Repairs & Repainting", text: "Expert servicing and repainting to restore protection and extend transformer life.", img: "mt-welding.jpg", chips: ["Servicing", "Repainting"] },
-        { href: "/services", icon: "fa-calendar-check", title: "AMC & Rentals", text: "Time-bound annual maintenance contracts and a rental fleet for temporary power needs.", img: "mt-control-panel.jpg", chips: ["AMC", "Rental fleet"] },
+        { href: "/services", icon: "fa-paint-roller", title: "Repairs & Repainting", text: "Expert servicing and repainting to restore protection and extend transformer life.", img: PIC("teterte-1.jpg"), chips: ["Servicing", "Repainting"] },
+        { href: "/services", icon: "fa-calendar-check", title: "AMC & Rentals", text: "Time-bound annual maintenance contracts and a rental fleet for temporary power needs.", img: PIC("sASas.jpg"), chips: ["AMC", "Rental fleet"] },
     ]
     const layout = ["is-feature", "", "", "", "", ""]
     return (
@@ -377,6 +378,60 @@ export function Industries() {
                                 <h3>{t}</h3><p>{d}</p>
                             </SpotlightCard>
                         </Reveal>
+                    ))}
+                </div>
+            </div>
+        </section>
+    )
+}
+
+/* Client logo marquee (two rows scrolling in opposite directions) */
+export function ClientLogos({ title = <>Trusted by <span className="mt-grad-text">industry leaders.</span></>, text = "Utilities, developers, hospitals, manufacturers and infrastructure leaders across India power their projects with Magnitude transformers.", grid = false }) {
+    const half = Math.ceil(clients.length / 2)
+    return (
+        <section className="mt-section mt-section--tight">
+            <div className="mt-container">
+                <SectionHead center eyebrow="Our Clients" icon="fa-handshake" title={title} text={text} />
+            </div>
+            {grid ? (
+                <div className="mt-container">
+                    <div className="mt-logo-grid">
+                        {clients.map(([src, name], k) => (
+                            <Reveal key={name} delay={(k % 4) * 0.06}>
+                                <div className="mt-client" title={name}><img src={src} alt={name} loading="lazy" /></div>
+                            </Reveal>
+                        ))}
+                    </div>
+                </div>
+            ) : (
+                <Reveal className="mt-logo-rows">
+                    <Marquee duration={45}>
+                        {clients.slice(0, half).map(([src, name]) => <div key={name} className="mt-client" title={name}><img src={src} alt={name} loading="lazy" /></div>)}
+                    </Marquee>
+                    <Marquee duration={45} reverse>
+                        {clients.slice(half).map(([src, name]) => <div key={name} className="mt-client" title={name}><img src={src} alt={name} loading="lazy" /></div>)}
+                    </Marquee>
+                </Reveal>
+            )}
+        </section>
+    )
+}
+
+/* Featured drone videos (two side by side) */
+export function VideoShowcase() {
+    const featured = videos.slice(0, 2)
+    if (!featured.length) return null
+    return (
+        <section className="mt-section mt-section--alt">
+            <Backdrop aurora={false} />
+            <div className="mt-container">
+                <div className="mt-split mt-split--head">
+                    <SectionHead eyebrow="Video Tour" icon="fa-circle-play" title={<>See our transformers <span className="mt-grad-text">in action.</span></>} />
+                    <Reveal style={{ justifySelf: "end" }}><Link href="/video-gallery" className="mt-link">Watch all videos <i className="fas fa-arrow-right" /></Link></Reveal>
+                </div>
+                <div className="mt-grid mt-grid-2">
+                    {featured.map((v, k) => (
+                        <Reveal key={v.src || v.id} variant="scale" delay={k * 0.12}><VideoPlayer {...v} /></Reveal>
                     ))}
                 </div>
             </div>

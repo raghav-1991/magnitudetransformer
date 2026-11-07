@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    // Allows a local production build check without touching the dev server's .next folder
+    distDir: process.env.NEXT_DIST_DIR || ".next",
     // Old template URLs → new Magnitude pages
     async redirects() {
         return [

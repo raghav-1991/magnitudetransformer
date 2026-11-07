@@ -2,14 +2,14 @@ import SiteShell from "@/components/mt/SiteShell"
 import { PageHero, FaqBlock } from "@/components/mt/sections"
 import { Reveal, SpotlightCard, Backdrop, Meteors } from "@/components/mt/effects"
 import { ContactForm } from "@/components/mt/forms"
-import { IMG, company } from "@/lib/site"
+import { PIC, company } from "@/lib/site"
 
 export const metadata = { title: "Contact Us" }
 
 export default function ContactPage() {
     return (
         <SiteShell>
-            <PageHero title="Contact Us" image={IMG("mt-control-panel.jpg")} text="Get in touch with us!" />
+            <PageHero title="Contact Us" image={PIC("DJI_0892-scaled.jpg")} text="Get in touch with us!" />
             <section className="mt-section">
                 <Backdrop aurora={false} />
                 <div className="mt-container">

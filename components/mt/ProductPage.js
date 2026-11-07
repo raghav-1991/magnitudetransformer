@@ -1,6 +1,6 @@
 'use client'
 import Link from "next/link"
-import { IMG, products } from "@/lib/site"
+import { products } from "@/lib/site"
 import SiteShell from "./SiteShell"
 import { PageHero, SectionHead, CtaBlock, BigMarquee } from "./sections"
 import { Reveal, SpotlightCard, Tilt, Gallery, Backdrop } from "./effects"
@@ -95,7 +95,7 @@ export default function ProductPage({ slug }) {
 
             <section className="mt-section mt-section--tight" style={{ paddingTop: 0 }}>
                 <div className="mt-container">
-                    <Reveal><Gallery layout="grid" images={p.gallery.map(f => [IMG(f), f.replace("mt-", "").replace(".jpg", "").replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase())])} /></Reveal>
+                    <Reveal><Gallery layout="grid" images={p.gallery} /></Reveal>
                 </div>
             </section>
 

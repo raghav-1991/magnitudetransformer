@@ -233,7 +233,7 @@
 .mt-header { position: sticky; top: 0; z-index: 1000; padding: 14px 0; transition: padding .4s var(--ease); }
 .mt-header__bar {
     display: flex; align-items: center; justify-content: space-between; gap: 24px;
-    height: 76px; padding: 0 14px 0 26px; border-radius: 999px;
+    height: 96px; padding: 0 14px 0 26px; border-radius: 999px;
     background: rgba(255, 255, 255, .7); border: 1px solid var(--border);
     backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
     box-shadow: 0 10px 30px -18px rgba(15, 23, 42, .2);
@@ -241,12 +241,12 @@
 }
 .mt-header.is-scrolled { padding: 10px 0; }
 .mt-header.is-scrolled .mt-header__bar {
-    height: 68px; background: rgba(255, 255, 255, .9); border-color: var(--border-2);
+    height: 86px; background: rgba(255, 255, 255, .9); border-color: var(--border-2);
     backdrop-filter: blur(18px) saturate(180%); -webkit-backdrop-filter: blur(18px) saturate(180%);
     box-shadow: 0 18px 40px -20px rgba(15, 23, 42, .3);
 }
-.mt-logo img { height: 62px; width: auto; transition: height .4s var(--ease); }
-.mt-header.is-scrolled .mt-logo img { height: 54px; }
+.mt-logo img { height: 89px; width: auto; transition: height .4s var(--ease); }
+.mt-header.is-scrolled .mt-logo img { height: 78px; }
 
 .mt-nav { display: flex; align-items: center; gap: 2px; }
 .mt-nav > li { position: relative; }
@@ -326,7 +326,7 @@
 /* ==========================================================================
    HERO
    ========================================================================== */
-.mt-hero { position: relative; margin-top: -104px; padding: 190px 0 110px; min-height: clamp(720px, 100vh, 1000px); display: flex; align-items: center; overflow: hidden; isolation: isolate; background: #fff; }
+.mt-hero { position: relative; margin-top: -124px; padding: 190px 0 110px; min-height: clamp(720px, 100vh, 1000px); display: flex; align-items: center; overflow: hidden; isolation: isolate; background: #fff; }
 @media (max-width: 991px) { .mt-hero { padding-top: 160px; } }
 .mt-hero__bg { position: absolute; inset: 0; z-index: -3; }
 .mt-hero__bg img { width: 100%; height: 100%; object-fit: cover; opacity: .6; filter: saturate(.85); transform: scale(1.08); animation: mt-kenburns 22s ease-in-out infinite alternate; }
@@ -593,7 +593,7 @@
 /* ==========================================================================
    PAGE HERO (inner pages)
    ========================================================================== */
-.mt-pagehero { position: relative; margin-top: -104px; padding: 210px 0 110px; overflow: hidden; isolation: isolate; text-align: center; background: #fff; }
+.mt-pagehero { position: relative; margin-top: -124px; padding: 210px 0 110px; overflow: hidden; isolation: isolate; text-align: center; background: #fff; }
 @media (max-width: 991px) { .mt-pagehero { padding: 180px 0 90px; } }
 .mt-pagehero__bg { position: absolute; inset: 0; z-index: -3; }
 .mt-pagehero__bg img { width: 100%; height: 100%; object-fit: cover; opacity: .55; filter: saturate(.85); animation: mt-kenburns 24s ease-in-out infinite alternate; }
@@ -728,3 +728,33 @@
 @keyframes mt-ripple { from { transform: scale(1); opacity: 1; } to { transform: scale(1.9); opacity: 0; } }
 .mt-sticky { position: sticky; top: 120px; }
 .mt-center { text-align: center; }
+
+/* ==========================================================================
+   CLIENT LOGOS
+   ========================================================================== */
+.mt-logo-rows { display: grid; gap: 18px; }
+.mt-logo-rows .mt-marquee { --gap: 18px; }
+.mt-client { flex: 0 0 auto; width: 210px; height: 110px; display: grid; place-items: center; padding: 18px 22px; border-radius: 18px; background: #fff; border: 1px solid var(--border); box-shadow: 0 1px 2px rgba(15, 23, 42, .04); transition: transform .4s var(--ease), box-shadow .4s, border-color .4s; }
+.mt-client img { max-width: 100%; max-height: 70px; object-fit: contain; filter: grayscale(1); opacity: .75; transition: filter .4s, opacity .4s; }
+.mt-client:hover { transform: translateY(-4px); border-color: var(--tint-border); box-shadow: var(--shadow-sm); }
+.mt-client:hover img { filter: none; opacity: 1; }
+.mt-logo-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.mt-logo-grid .mt-client { width: 100%; height: 130px; }
+.mt-logo-grid .mt-client img { filter: none; opacity: 1; }
+@media (max-width: 991px) { .mt-logo-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 640px) { .mt-logo-grid { grid-template-columns: repeat(2, 1fr); } .mt-client { width: 160px; height: 90px; } }
+
+/* video player extras */
+.mt-video video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; background: #000; }
+.mt-video--large { border-radius: 30px; }
+.mt-video--large .mt-play { width: 110px; height: 110px; font-size: 30px; }
+.mt-video__title { position: absolute; left: 22px; bottom: 20px; display: inline-flex; align-items: center; gap: 10px; padding: 10px 16px; border-radius: 999px; background: rgba(255, 255, 255, .92); color: var(--text); font-weight: 600; font-size: 14.5px; box-shadow: var(--shadow-sm); }
+.mt-video__title i { color: var(--red); }
+
+/* service cards with photo */
+.mt-svc { padding: 0; display: flex; flex-direction: column; }
+.mt-svc__img { position: relative; height: 200px; overflow: hidden; }
+.mt-svc__img img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s var(--ease); }
+.mt-svc:hover .mt-svc__img img { transform: scale(1.08); }
+.mt-svc__body { position: relative; padding: 0 30px 30px; display: flex; flex-direction: column; flex: 1; }
+.mt-svc__body .mt-icon { margin-top: -30px; border: 4px solid #fff; box-sizing: content-box; }

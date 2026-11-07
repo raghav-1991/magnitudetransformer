@@ -1,12 +1,12 @@
 'use client'
 import Link from "next/link"
-import { IMG, company } from "@/lib/site"
+import { PIC, company } from "@/lib/site"
 import { Backdrop, Reveal, Tilt, WordRotate, NumberTicker } from "./effects"
 
 export default function Hero() {
     return (
         <section className="mt-hero">
-            <div className="mt-hero__bg"><img src={IMG("mt-hero-transformer.jpg")} alt="" /></div>
+            <div className="mt-hero__bg"><img src={PIC("DJI_0901-scaled.jpg")} alt="" /></div>
             <Backdrop spotlight />
             <div className="mt-container">
                 <div className="mt-hero__grid">
@@ -38,7 +38,7 @@ export default function Hero() {
                     <Reveal delay={0.25} variant="scale" className="mt-hero__visual">
                         <Tilt max={8}>
                             <div className="mt-hero__frame mt-beam">
-                                <img src={IMG("mt-transformer-station.jpg")} alt="Magnitude oil filled distribution transformer" />
+                                <img src={PIC("SLV_4836-scaled.jpg")} alt="Magnitude oil filled distribution transformer" />
                             </div>
                         </Tilt>
                         <div className="mt-float mt-float--1"><i className="fas fa-star" /><div><strong>BEE Star Rated</strong><small>ISI marked · BIS approved</small></div></div>

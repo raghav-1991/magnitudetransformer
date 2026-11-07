@@ -2,7 +2,7 @@ import SiteShell from "@/components/mt/SiteShell"
 import Hero from "@/components/mt/Hero"
 import {
     HeroFeatures, StandardsStrip, AboutBlock, ProductsBento, CtaBlock, GalleryBlock,
-    ProductRange, Stats, WhyChoose, Team, FaqBlock, BigMarquee,
+    ProductRange, Stats, WhyChoose, Team, FaqBlock, BigMarquee, ClientLogos, VideoShowcase,
 } from "@/components/mt/sections"
 
 export const metadata = {
@@ -21,8 +21,10 @@ export default function Home() {
             <ProductsBento />
             <CtaBlock />
             <GalleryBlock />
+            <VideoShowcase />
             <ProductRange />
             <Stats />
+            <ClientLogos />
             <BigMarquee />
             <WhyChoose />
             <Team />
